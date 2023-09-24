@@ -1,0 +1,58 @@
+:root {
+  --cell-width: 60px;
+  --grid-border: 1px solid rgb(128, 128, 128);
+  --accent-color: #747bff;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.board {
+  border: var(--grid-border);
+}
+
+.board_row {
+  height: var(--cell-width);
+  display: flex;
+}
+
+.board_cell {
+  width: var(--cell-width);
+  height: var(--cell-width);
+  border: var(--grid-border);
+  border-radius: 0;
+
+  /*TODO add postcss*/
+  /* https://stackoverflow.com/questions/71778929/how-to-setup-postcss-nesting-in-vite */
+  &:hover {
+    background: var(--accent-color);
+  }
+}
+
+.zone_winner {
+  margin-bottom: 16px;
+  background: rgba(211, 211, 211, 0.3);
+  padding: 8px 0;
+  width: calc(var(--cell-width) * 3);
+  border-radius: 3px;
+  box-sizing: content-box;
+  text-align: center;
+}
+
+.btn-restart {
+  margin-top: 16px;
+}
